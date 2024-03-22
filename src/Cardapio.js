@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity} from "react-native";
 import CardapioLista from "./CardapioLista";
+import Header from "./components/Header";
 
 const pratos = [
     {
@@ -52,7 +53,22 @@ export default function Cardapio ()
 {
     return(
         <View style={css.container}>
+            <Header />
             <Text style={css.titulo}>ARMAZÉM D’VITTO - CARDÁPIO</Text>
+            <View style={css.botao}>
+                <TouchableOpacity>
+                    <Text>Pratos</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text>Porções</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text>Bebidas</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text>Doces</Text>
+                </TouchableOpacity>
+            </View>
             <View style={css.box}>
                 <FlatList
                     data={pratos} renderItem={({ item }) => <CardapioLista imagem={item.imagem} nome={item.nome} descricao={item.descricao} preco={item.preco} />}

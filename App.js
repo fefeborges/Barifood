@@ -35,6 +35,7 @@ export default function App() {
         headerTitleStyle: { color: "white" },
         tabBarActiveTintColor: "#848483",
         tabBarInactiveTintColor: "#FFEFD9",
+        headerShown: false
       }}>
         <Tab.Screen
           name="Home"
@@ -55,6 +56,15 @@ export default function App() {
               <MaterialCommunityIcons name='cart' color={color} size={40} />),
           }}
         />
+        <Tab.Screen
+        name="Cardapio"
+        component={Cardapio}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name='cart' color={color} size={40} />),
+        }}
+      />
       </Tab.Navigator>
     </NavigationContainer>
   );

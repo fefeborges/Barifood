@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { TextInput, TouchableOpacity, View, Text, StyleSheet } from 'react-native'
+import Header from './components/Header';
 
 
 export default function Cadastro({ setLogado, setCadastro }) {
@@ -9,6 +10,8 @@ export default function Cadastro({ setLogado, setCadastro }) {
     const[ senha, setSenha ] = useState("");
 
     function Cadastrar() {
+        /** @todo fazer mais verfiicações e validações. TIpo se for vazio enfim... */
+        if( email != "" && senha != "" )
         setCadastro(false);
         setLogado(false);
     }
@@ -19,6 +22,7 @@ export default function Cadastro({ setLogado, setCadastro }) {
 
   return (
     <View style={css.container}>
+        <Header />
         <Text style={css.titulo}>CADASTRO</Text>
         <TextInput style={css.input} placeholder="Insira seu Nome" />
         <TextInput style={css.input} placeholder="Insira seu Email" onChangeText={ (digitado) => setEmail(digitado) } value={email} TextInput={email} />
@@ -28,6 +32,10 @@ export default function Cadastro({ setLogado, setCadastro }) {
         <TouchableOpacity style={css.btn} onPress={Cadastrar}>
             <Text style={css.texto}>Entrar</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={css.btn} onPress={Voltar}>
+            <Text style={css.texto}>Voltar</Text>
+        </TouchableOpacity>
+        <View style={css.footer}></View>
     </View>
   )
 }
@@ -69,5 +77,12 @@ const css = StyleSheet.create({
         fontSize: 18,
         textAlign: "center",
         top: 10
+    },
+    footer: {
+        width: "100%",
+        height: 70,
+        backgroundColor:  "#5C0505",
+        position: "absolute",
+        bottom: 0
     }
 })

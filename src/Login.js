@@ -20,6 +20,7 @@ export default function Login({ setLogado, setCadastro }) {
 
   return (
     <View style={css.container}>
+        <View style={css.header}></View>
         <Text style={css.texto2}>Bem-vindo(a) ao Barifood, onde a comodidade encontra o sabor!</Text>
         <Image style={css.logo} source={require("../assets/logo redonda.png")} />
         <TextInput style={css.input} placeholder="Insira seu Email" onChangeText={ (digitado) => setEmail(digitado) } value={email} TextInput={email} />
@@ -31,6 +32,7 @@ export default function Login({ setLogado, setCadastro }) {
             <Text style={css.texto1}>Cadastro</Text>
         </TouchableOpacity>
         <Text style={css.texto2}>Explore nosso menu diversificado e faça pedidos sem sair de casa.</Text>
+        <View style={css.footer}></View>
     </View>
   )
 }
@@ -39,18 +41,18 @@ const css = StyleSheet.create({
     container: {
         backgroundColor: "#FFEFD9",
         height: "100%",
-        alignItems: "center"
+        alignItems: "center",
     },
     input: {
         marginTop: 25,
         width: "80%",
         marginTop: 25,
         backgroundColor: "white",
-        paddingLeft: 5,
         height: 50,
         borderWidth: 1,
         borderColor: "#5C0505",
         borderRadius: 7,
+        padding: 7
     },
     btn: {
         marginTop: 25,
@@ -94,5 +96,18 @@ const css = StyleSheet.create({
         resizeMode: "contain", 
         marginTop: 30,
         marginBottom: 20
+    },
+    header: {
+        width: "100%",
+        height: 81,
+        backgroundColor:  "#5C0505",
+        marginBottom: 40
+    },
+    footer: {
+        width: "100%",
+        height: 70,
+        backgroundColor:  "#5C0505",
+        position: "absolute",
+        bottom: 0
     }
 })
