@@ -11,6 +11,7 @@ import Cardapio from './src/Cardapio';
 import Login from "./src/Login"
 import Compra from './src/Compra';
 import Cadastro from './src/Cadastro';
+import Pedidos from './src/Pedidos';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,8 +34,8 @@ export default function App() {
         tabBarStyle: { backgroundColor: "#5C0505" },
         headerStyle: { backgroundColor: "#5C0505" },
         headerTitleStyle: { color: "white" },
-        tabBarActiveTintColor: "#848483",
-        tabBarInactiveTintColor: "#FFEFD9",
+        tabBarActiveTintColor: "#FFEFD9",
+        tabBarInactiveTintColor: "#848483",
         headerShown: false
       }}>
         <Tab.Screen
@@ -65,6 +66,15 @@ export default function App() {
             <MaterialCommunityIcons name='cart' color={color} size={40} />),
         }}
       />
+        <Tab.Screen
+          name="Pedidos"
+          component={Pedidos}
+          options={{
+            tabBarLabel: '',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name='cart' color={color} size={40} />),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );

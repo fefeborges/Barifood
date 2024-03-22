@@ -6,12 +6,13 @@ import Header from './components/Header';
 
 export default function Cadastro({ setLogado, setCadastro }) {
 
+    const[ nome, setNome ] = useState("");
+    const[ telefone, setTelefone ] = useState("");
     const[ email, setEmail ] = useState("");
     const[ senha, setSenha ] = useState("");
 
     function Cadastrar() {
-        /** @todo fazer mais verfiicações e validações. TIpo se for vazio enfim... */
-        if( email != "" && senha != "" )
+        if( nome!= "" && telefone!= "" && email != "" && senha != "" )
         setCadastro(false);
         setLogado(false);
     }
@@ -24,9 +25,9 @@ export default function Cadastro({ setLogado, setCadastro }) {
     <View style={css.container}>
         <Header />
         <Text style={css.titulo}>CADASTRO</Text>
-        <TextInput style={css.input} placeholder="Insira seu Nome" />
+        <TextInput style={css.input} placeholder="Insira seu Nome" onChangeText={ (digitado) => setNome(digitado) } value={nome} TextInput={nome}/>
         <TextInput style={css.input} placeholder="Insira seu Email" onChangeText={ (digitado) => setEmail(digitado) } value={email} TextInput={email} />
-        <TextInput style={css.input} placeholder="Insira seu Telefone" />
+        <TextInput style={css.input} placeholder="Insira seu Telefone" onChangeText={ (digitado) => setTelefone(digitado) } value={telefone} TextInput={telefone} />
         <TextInput style={css.input} placeholder="Insira sua Senha" onChangeText={ (digitado) => setSenha(digitado) } value={senha} TextInput={senha} secureTextEntry={true} />
         <TextInput style={css.input} placeholder="Confirme sua Senha" onChangeText={ (digitado) => setSenha(digitado) } value={senha} TextInput={senha} secureTextEntry={true} />
         <TouchableOpacity style={css.btn} onPress={Cadastrar}>
