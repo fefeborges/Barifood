@@ -10,15 +10,24 @@ export default function CompraLista({nome, preco}) {
 }
 const css = StyleSheet.create({
     container: {
-        flex: 1,
+        width: "95%",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        alignSelf: "center",
+        marginTop: 20,
+        marginBottom: 10,
+        paddingBottom: 15,
+        borderBottomWidth: 0.8
     },
     nome: {
-        fontSize: 18,
-        marginTop: 15,
-        marginLeft: 10
+        fontSize: 15,
+        width: "70%"
     },
     preco: {
-        fontSize: 18,
+        fontSize: 15,
+        width: "20%"
     },
     box: {
         borderBottomWidth: 1,

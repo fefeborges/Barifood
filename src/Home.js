@@ -1,6 +1,7 @@
 import { Text, View, FlatList, StyleSheet, Image } from "react-native";
 import { useState } from "react";
 import RestaurantesLista from "./RestaurantesLista";
+import Header from "./components/Header";
 
 const restaurantes = [
     {
@@ -66,6 +67,7 @@ const restaurantes = [
 export default function Home() {
     return (
         <View style={css.container}>
+            <Header />
             <Text style={css.titulo}>RESTAURANTES</Text>
             <FlatList
                 data={restaurantes} renderItem={({ item }) => <RestaurantesLista imagem={item.imagem} nome={item.nome} descricao={item.descricao} avaliacao={item.avaliacao} />}

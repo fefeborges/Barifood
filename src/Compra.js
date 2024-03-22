@@ -3,6 +3,7 @@ import { useState } from "react";
 import CompraLista from "./CompraLista";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { TextInput } from "react-native";
+import Header from "./components/Header";
 
 const compra = [
     {
@@ -22,16 +23,23 @@ const compra = [
 export default function Compra() {
     return (
         <View style={css.container}>
+            <Header />
             <Text style={css.titulo}>COMPRA</Text>
             <View style={css.box}>
-            <FlatList
-                data={compra} renderItem={({ item }) => <CompraLista nome={item.nome} preco={item.preco} />}
-                keyExtractor={(item) => item.id} />
-            <Text style={css.cupom}>Cupom</Text>
-            <TextInput style={css.inputcupom} placeholder="Insira um cupom" />
-            <Text>Total:</Text>
-            <Text>R$172.00</Text>
-            </View> 
+                <FlatList
+                    data={compra} renderItem={({ item }) => <CompraLista nome={item.nome} preco={item.preco} />}
+                    keyExtractor={(item) => item.id} 
+                />
+                <View style={css.boxCupom}>
+                    <Text style={css.cupom}>Cupom</Text>
+                    <TextInput style={css.inputcupom} placeholder="Insira um cupom" />
+                </View>
+                <View style={css.boxTotal}>
+                    <Text>Total:</Text>
+                    <Text>R$172.00</Text>
+                </View>
+                
+            </View>
         </View>
     )
 }
@@ -61,17 +69,37 @@ const css = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 1,
         borderColor: "#5C0505",
-        height: 600
     },
     inputcupom: {
-        marginTop: 25,
         width: "50%",
         height: 35,
         borderWidth: 1,
         borderColor: "#5C0505",
         borderRadius: 5,
+        padding: 10
+    },
+    boxCupom: {
+        width: "95%",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignSelf: "center",
+        marginTop: 10,
+        marginBottom: 10,
+        paddingBottom: 10,
+        borderBottomWidth: 1
     },
     cupom: {
         fontSize: 18,
+    },
+    boxTotal: {
+        width: "95%",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignSelf: "center",
+        marginTop: 10,
+        marginBottom: 10,
+        paddingBottom: 10
     }
 })
