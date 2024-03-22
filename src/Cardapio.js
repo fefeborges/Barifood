@@ -56,17 +56,17 @@ export default function Cardapio ()
             <Header />
             <Text style={css.titulo}>ARMAZÉM D’VITTO - CARDÁPIO</Text>
             <View style={css.botao}>
-                <TouchableOpacity>
-                    <Text>Pratos</Text>
+                <TouchableOpacity style={css.btn}>
+                    <Text style={css.texto2}>PRATOS</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text>Porções</Text>
+                <TouchableOpacity style={css.btn}>
+                    <Text style={css.texto2}>PORÇÕES</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text>Bebidas</Text>
+                <TouchableOpacity style={css.btn}>
+                    <Text style={css.texto2}>BEBIDAS</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Text>Doces</Text>
+                <TouchableOpacity style={css.btn}>
+                    <Text style={css.texto2}>DOCES</Text>
                 </TouchableOpacity>
             </View>
             <View style={css.box}>
@@ -89,7 +89,6 @@ const css = StyleSheet.create({
     titulo: {
         fontSize: 20,
         color: "#5C0505",
-        marginTop: 15,
         marginLeft: 10,
         marginBottom: 10
     },
@@ -117,6 +116,28 @@ const css = StyleSheet.create({
         color:"#FFEFD9",
         textAlign:"center",
         fontSize: 18
+    },
+    botao: {
+        display:"flex",
+        flexDirection:"row",
+        alignItems: "center",
+        
+    },
+    btn:{
+        marginBottom: 20,
+        backgroundColor: "#8E0606",
+        width: "20%",
+        height: 25,
+        justifyContent: "space-between",
+        borderRadius: 8,
+        borderWidth: 1,
+        borderColor: "black",
+        marginTop: 5,
+    },
+    texto2:{
+        color:"#FFEFD9",
+        textAlign:"center",
+        fontSize: 15
     }
     
 })
