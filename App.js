@@ -43,7 +43,7 @@ const Tab = createBottomTabNavigator();
             ), 
           }}
         />
-        <Tab.Screen name="Compra" component={Compra}  options={{tabBarLabel: '', tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name='cart' color={color} size={40} />), }}/>
+        <Tab.Screen name="Compra" component={Compra}  options={{tabBarLabel: '', tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name='cart' color={color} size={40} />), }}/> 
       </Tab.Navigator>
     </NavigationContainer>
   );
