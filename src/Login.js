@@ -58,7 +58,7 @@ const css = StyleSheet.create({
         marginTop: 25,
         width: "80%",
         marginTop: 25,
-        backgroundColor: "#5C0505",
+        backgroundColor: "#8E0606",
         height: 50,
         borderWidth: 1,
         borderRadius: 10,
@@ -71,7 +71,7 @@ const css = StyleSheet.create({
         height: 50,
         borderWidth: 2,
         borderRadius: 10,
-        borderColor: "#5C0505",
+        borderColor: "#8E0606",
     },
     texto: {
         color: "#FFEFD9",
