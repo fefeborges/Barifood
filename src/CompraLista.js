@@ -16,17 +16,18 @@ const css = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         alignSelf: "center",
-        marginTop: 20,
-        marginBottom: 10,
+        marginTop: 10,
+        marginBottom: 15,
         paddingBottom: 15,
-        borderBottomWidth: 0.8
+        borderBottomWidth: 0.8,
+        borderBottomColor: "#A29D9D"
     },
     nome: {
-        fontSize: 15,
+        fontSize: 17,
         width: "70%"
     },
     preco: {
-        fontSize: 15,
+        fontSize: 17,
         width: "20%"
     },
     box: {

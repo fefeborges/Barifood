@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useState } from 'react';
+import React from 'react';
+
 
 import Home from './src/Home';
 import Ajustes from './src/Ajustes';
@@ -31,7 +33,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator initialRouteName='Home' screenOptions={{
-        tabBarStyle: { backgroundColor: "#5C0505" },
+        tabBarStyle: { backgroundColor: "#5C0505", height: 70},
         headerStyle: { backgroundColor: "#5C0505" },
         headerTitleStyle: { color: "white" },
         tabBarActiveTintColor: "#FFEFD9",
@@ -49,21 +51,12 @@ export default function App() {
           }}
         />
         <Tab.Screen
-          name="Compra"
-          component={Compra}
-          options={{
-            tabBarLabel: '',
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name='cart' color={color} size={40} />),
-          }}
-        />
-        <Tab.Screen
         name="Cardapio"
         component={Cardapio}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name='cart' color={color} size={40} />),
+            <MaterialCommunityIcons name='silverware-variant' color={color} size={40} />),
         }}
       />
         <Tab.Screen
@@ -72,7 +65,25 @@ export default function App() {
           options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name='cart' color={color} size={40} />),
+              <MaterialCommunityIcons name='cart' color={color} size={35} />),
+          }}
+        />
+        <Tab.Screen
+          name="Compra"
+          component={Compra}
+          options={{
+            tabBarLabel: '',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name='wallet-plus' color={color} size={35} />),
+          }}
+        />
+        <Tab.Screen
+          name="Ajustes"
+          component={Ajustes}
+          options={{
+            tabBarLabel: '',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name='menu' color={color} size={40} />),
           }}
         />
       </Tab.Navigator>
