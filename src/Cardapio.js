@@ -95,7 +95,7 @@ const css = StyleSheet.create({
     box: {
         backgroundColor: "white",
         width: "90%",
-        height: "75%",
+        height: "65%",
         justifyContent: "center",
         borderRadius: 10,
         borderWidth: 1,
@@ -103,7 +103,7 @@ const css = StyleSheet.create({
        
     },
     compra:{
-        backgroundColor: "#5C0505",
+        backgroundColor: "#8E0606",
         width: "90%",
         height: 50,
         justifyContent: "center",

@@ -38,6 +38,7 @@ const css = StyleSheet.create({
         color:"#5C0505",
         marginTop:10,
         fontSize:19,
+        
        
     }
 })
