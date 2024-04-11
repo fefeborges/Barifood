@@ -20,8 +20,7 @@ const css = StyleSheet.create({
         width:"100%",
         height: 100,
         resizeMode: "contain",
-        top:20,
-        
+        top:20,    
     },
     nome: {
         fontWeight:"500",

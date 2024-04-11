@@ -11,7 +11,7 @@ export default function Ajustes()
                         <Text style={css.titulo}>AJUSTES</Text>
                     </View>
                     <View style={css.boxInfo}>
-                        <Text style={css.info}>Notificação </Text>
+                        <Text style={css.info}>Notificação</Text>
                         <Text style={css.info}>Pagamentos</Text>
                         <Text style={css.info}>Cupons</Text>
                         <Text style={css.info}>Favoritos</Text>
@@ -34,7 +34,6 @@ const css = StyleSheet.create({
         textAlign: "center",
         fontSize: 20,
         color:"#5C0505"
-
      },
      boxInfo: {
         width: "90%",

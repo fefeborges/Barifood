@@ -34,9 +34,8 @@ const css = StyleSheet.create({
       info:{
         top:15,
         flex: 1,
-        flexDirection: "row",
         flexWrap: "wrap",
-        width: "95%",
+        width: "95%"
       },
       subtotal:{
         width:"70%",

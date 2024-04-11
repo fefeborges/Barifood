@@ -4,7 +4,7 @@ import CompraLista from "./CompraLista";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { TextInput } from "react-native";
 import Header from "./components/Header";
-import Dropdown from 'react-native-input-select';
+// import Dropdown from 'react-native-input-select';
 import React from 'react';
 
 const compra = [
@@ -70,8 +70,8 @@ export default function Compra() {
                     <View style={css.boxlabel}>
                         <Text style={css.label}>Forma de Pagamento:</Text>
                     </View>
-                    <TouchableOpacity style={css.botao}>
-                        <Text style={css.texto2}>Finalizar Pedido</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate("Pedidos")} style={css.compra}>
+                        <Text style={css.texto}>Finalizar Pedido</Text>
                     </TouchableOpacity>
                 </View>
             </View>

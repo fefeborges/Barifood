@@ -27,7 +27,7 @@ export default function Pedidos() {
       <Header />
       <Text style={css.titulo}>PEDIDOS</Text>    
       <FlatList
-        data={pedidos} renderItem={({ item }) => <PedidosLista  subtotal={item.subtotal} taxa={item.taxa} total={item.total} tempoentrega={item.tempoentrega}/>}
+        data={pedidos} renderItem={({ item }) => <PedidosLista subtotal={item.subtotal} taxa={item.taxa} total={item.total} tempoentrega={item.tempoentrega}/>}
         keyExtractor={(item) => item.id} />
     </View>
   )

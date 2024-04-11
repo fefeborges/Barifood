@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity} from "react-native";
+import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity, Button} from "react-native";
 import CardapioLista from "./CardapioLista";
 import Header from "./components/Header";
 
@@ -49,7 +49,7 @@ const pratos = [
 
 ]
 
-export default function Cardapio ()
+export default function Cardapio ({navigation})
 {
     return(
         <View style={css.container}>
@@ -74,7 +74,7 @@ export default function Cardapio ()
                     data={pratos} renderItem={({ item }) => <CardapioLista imagem={item.imagem} nome={item.nome} descricao={item.descricao} preco={item.preco} />}
                     keyExtractor={(item) => item.id} />
             </View>
-            <TouchableOpacity style={css.compra} >
+            <TouchableOpacity onPress={() => navigation.navigate("Compra")} style={css.compra}>
                 <Text style={css.texto}>Continuar Compra</Text>
             </TouchableOpacity>
         </View>
@@ -100,7 +100,6 @@ const css = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 1,
         borderColor: "#5C0505",
-       
     },
     compra:{
         backgroundColor: "#8E0606",
@@ -121,7 +120,7 @@ const css = StyleSheet.create({
         display:"flex",
         flexDirection:"row",
         alignItems: "center",
-        
+        columnGap: 10 
     },
     btn:{
         marginBottom: 20,
