@@ -1,13 +1,13 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
-export default function RestaurantesLista({imagem, nome, descricao, avaliacao}) {
+export default function RestaurantesLista({imagem, nome, descricao, avaliacao, navigation}) {
     return(
-        <View style={css.container}>
+        <TouchableOpacity onPress={ () => navigation.navigate( "Cardapio" ) } style={css.container}>
             <Image source={imagem} style={css.imagem}/>
             <Text style={css.nome}>{nome}</Text>
             <Text style={css.descricao}>{descricao}</Text>
             <Text style={css.avaliacao}>{avaliacao}</Text>
-        </View>
+        </TouchableOpacity>
     )
 }
 

@@ -64,7 +64,7 @@ const restaurantes = [
     },
 ]
 
-export default function Home() {
+export default function Home({navigation}) {
     return (
         <View style={css.container}>
             <Header />

@@ -14,6 +14,7 @@ import Login from "./src/Login"
 import Compra from './src/Compra';
 import Cadastro from './src/Cadastro';
 import Pedidos from './src/Pedidos';
+import Mapa from './src/Mapa';
 
 const Tab = createBottomTabNavigator();
 
@@ -80,6 +81,15 @@ export default function App() {
         <Tab.Screen
           name="Ajustes"
           component={Ajustes}
+          options={{
+            tabBarLabel: '',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name='menu' color={color} size={40} />),
+          }}
+        />
+         <Tab.Screen
+          name="Mapa"
+          component={Mapa}
           options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (

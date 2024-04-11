@@ -60,7 +60,7 @@ export default function Compra() {
                 </View>
                 <View style={css.boxTotal}>
                     <Text style={css.texto1}>Total:</Text>
-                    <Text style={css.texto1}>R$172.00</Text>
+                    <Text style={css.texto1}>R$116.00</Text>
                 </View> 
                 <View style={css.boxDebaixo}>
                     <View style={css.boxlabel} >
