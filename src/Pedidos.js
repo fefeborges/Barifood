@@ -3,7 +3,8 @@ import { Text, View, StyleSheet, FlatList } from 'react-native';
 import Header from "./components/Header";
 import PedidosLista from './PedidosLista';
 
-export default function Pedidos() {
+export default function Pedidos({navigation}) 
+{
 
   const pedidos = [ 
     {
@@ -21,7 +22,7 @@ export default function Pedidos() {
       tempoentrega:"90"
     }
   ]
-
+  
   return (
     <View style={css.container}>
       <Header />

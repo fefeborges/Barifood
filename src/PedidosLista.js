@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function PedidosLista({subtotal, taxa, total, tempoentrega}) {
+export default function PedidosLista({subtotal, taxa, total, tempoentrega, navigation}) {
     return(
         <View style={css.box}>  
             <Text style={css.subtotal}>Subtotal</Text>       
@@ -11,7 +11,7 @@ export default function PedidosLista({subtotal, taxa, total, tempoentrega}) {
             <Text style={css.total2}>R${total}</Text>
             <Text style={css.cinza}>Tempo de Entrega</Text>
             <Text style={css.cinza2}>{tempoentrega}min</Text>
-            <TouchableOpacity style={css.compra} >
+            <TouchableOpacity onPress={() => navigation.navigate("Mapa")} style={css.compra} >
               <Text style={css.texto}>Rastrear Pedido</Text>
             </TouchableOpacity>
         </View>
