@@ -30,12 +30,6 @@ export default function Compra({setExibe, setCompra, navigation }) {
 
     function Select()
     {
-        // const Select = {
-        //     height: 10,
-        //     backgroundColor: '#f0f0f0',
-        //     padding: 10,
-        //     ...(Platform.OS === 'ios' ? { color: 'red' } : { color: 'blue' }),
-        // }; 
         return (
             <Dropdown
               placeholder="Selecione"
@@ -86,7 +80,10 @@ export default function Compra({setExibe, setCompra, navigation }) {
                     <View style={css.boxlabel}>
                         <Text style={css.label}>Forma de Pagamento:</Text>
                     </View>
-                    <Select style={css.select}/>
+                    <View style={css.select}>
+                        <Select />
+                    </View>
+                    
                 </View>
             </View>
         </ScrollView>
@@ -126,6 +123,7 @@ const css = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 1,
         borderColor: "#5C0505",
+        marginBottom: 50
     },
     inputcupom: {
         width: "50%",
@@ -179,7 +177,8 @@ const css = StyleSheet.create({
     },
     boxDebaixo: {
         width: "100%",
-        alignItems: "center"
+        alignItems: "center",
+        marginBottom: 50
     },
     label: {
         fontSize: 17,
@@ -218,11 +217,7 @@ const css = StyleSheet.create({
     },
     select: {
         width: "90%",
-        height: 30,
-        borderWidth: 1.5,
-        borderColor: "#5C0505",
-        borderRadius: 7,
-        padding: 10,
-        marginTop: 10
+        height: 40,
+        marginTop: 10,
     }
 })

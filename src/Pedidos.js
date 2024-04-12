@@ -4,7 +4,8 @@ import Header from "./components/Header";
 import PedidosLista from './PedidosLista';
 import Mapa from "./Mapa";
 
-export default function Pedidos() {
+export default function Pedidos({navigation}) 
+{
 
   const pedidos = [ 
     {
