@@ -3,7 +3,6 @@ import CardapioLista from "./CardapioLista";
 import Compra from "./Compra";
 import Header from "./components/Header";
 import { useState } from "react";
-import Home from "./Home";
 
 const pratos = [
     {
