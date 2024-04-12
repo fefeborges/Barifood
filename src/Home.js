@@ -110,6 +110,7 @@ const css = StyleSheet.create({
         backgroundColor: "#FFEFD9"
     },
     titulo: {
+        fontWeight: "500",
         fontSize: 20,
         color: "#5C0505",
         marginTop: 15,

@@ -49,11 +49,13 @@ const css = StyleSheet.create({
       height: "100%",
     },
     titulo:{
+      fontWeight: "500",
       fontSize: 20,
       color: "#5C0505",
       marginLeft: 10,
       marginBottom: 10,
-      textAlign: "center"
+      textAlign: "center",
+      marginTop: 15
     },
     
 

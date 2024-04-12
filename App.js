@@ -46,7 +46,7 @@ export default function App() {
           options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name='home' color={color} size={40} />
+              <MaterialCommunityIcons name='silverware-variant' color={color} size={40} />
             ),
           }}
         />
@@ -59,15 +59,7 @@ export default function App() {
               <MaterialCommunityIcons name='cart' color={color} size={35} />),
           }}
         />
-        <Tab.Screen
-          name="Compra"
-          component={Compra}
-          options={{
-            tabBarLabel: '',
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name='home' color={color} size={40} />),
-          }}
-        />
+       
         <Tab.Screen
           name="Ajustes"
           component={Ajustes}
@@ -77,15 +69,7 @@ export default function App() {
               <MaterialCommunityIcons name='menu' color={color} size={40} />),
           }}
         />
-         <Tab.Screen
-          name="Mapa"
-          component={Mapa}
-          options={{
-            tabBarLabel: '',
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name='menu' color={color} size={40} />),
-          }}
-        />
+         
       </Tab.Navigator>
     </NavigationContainer>
   );

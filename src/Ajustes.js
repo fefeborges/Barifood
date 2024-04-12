@@ -33,7 +33,8 @@ const css = StyleSheet.create({
         fontWeight: "500",
         textAlign: "center",
         fontSize: 20,
-        color:"#5C0505"
+        color:"#5C0505",
+        marginTop: 8
      },
      boxInfo: {
         width: "90%",
@@ -41,7 +42,7 @@ const css = StyleSheet.create({
      },
      info:{
         fontSize: 20,
-        marginTop: 10,
+        marginTop: 15,
         margin: 5,
         color:"#5C0505",
         borderTopWidth: 1,

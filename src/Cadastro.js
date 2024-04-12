@@ -48,6 +48,7 @@ const css = StyleSheet.create({
         alignItems: "center"
     },
     titulo: {
+        fontWeight: "500",
         fontSize: 20,
         color: "#5C0505",
         marginTop: 15,

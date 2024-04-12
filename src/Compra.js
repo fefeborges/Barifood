@@ -48,12 +48,7 @@ export default function Compra({setExibe, setCompra, navigation }) {
     return (
         <ScrollView contentContainerStyle={css.container}>
             <Header />
-            <TouchableOpacity onPress={() => navigation.navigate("Pedidos")} style={css.botao} setExibe={setExibe}>
-                <Text style={css.texto2}>Finalizar Pedido</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={css.voltar} onPress={ () => { setExibe( false ); setCompra( false ); } }>
-                <Text style={css.texto}>Voltar</Text>
-            </TouchableOpacity>
+            
             <Text style={css.titulo}>COMPRA</Text>
             <View style={css.box}>
                 <Image style={css.imagem} source={require("../assets/d'vitto.png")} />
@@ -83,9 +78,14 @@ export default function Compra({setExibe, setCompra, navigation }) {
                     <View style={css.select}>
                         <Select />
                     </View>
-                    
-                </View>
+                </View>    
             </View>
+            <TouchableOpacity onPress={() => navigation.navigate("Pedidos")} style={css.botao} setExibe={setExibe}>
+                <Text style={css.texto2}>Finalizar Pedido</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={css.voltar} onPress={ () => { setExibe( false ); setCompra( false ); } }>
+                <Text style={css.texto}>Voltar</Text>
+            </TouchableOpacity>
         </ScrollView>
     )
 }
@@ -96,6 +96,7 @@ const css = StyleSheet.create({
         alignItems: "center",
     },
     titulo: {
+        fontWeight: "500",
         fontSize: 20,
         color: "#5C0505",
         marginTop: 15,
@@ -123,7 +124,6 @@ const css = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 1,
         borderColor: "#5C0505",
-        marginBottom: 50
     },
     inputcupom: {
         width: "50%",
@@ -190,7 +190,7 @@ const css = StyleSheet.create({
         marginLeft: 20
     },
     botao: {
-        marginTop: 25,
+        marginTop: 20,
         width: "90%",
         marginTop: 25,
         backgroundColor: "#8E0606",

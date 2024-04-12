@@ -80,8 +80,8 @@ export default function Cardapio({setExibe, setCompra}) {
             <TouchableOpacity onPress={() => { setCompra( true ); setExibe( false ); } } style={css.compra}>
                 <Text style={css.texto}>Continuar Compra</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => { setCompra( false ); setExibe( false ); } } style={css.compra}>
-                <Text style={css.texto}>Voltar</Text>
+            <TouchableOpacity onPress={() => { setCompra( false ); setExibe( false ); } } style={css.voltar}>
+                <Text style={css.texto3}>Voltar</Text>
             </TouchableOpacity>
         </View>
     )
@@ -93,10 +93,12 @@ const css = StyleSheet.create({
         alignItems: "center",
     },
     titulo: {
+        fontWeight: "500",
         fontSize: 20,
         color: "#5C0505",
         marginLeft: 10,
-        marginBottom: 10
+        marginBottom: 10,
+        marginTop: 15
     },
     box: {
         backgroundColor: "white",
@@ -143,6 +145,22 @@ const css = StyleSheet.create({
         color:"#FFEFD9",
         textAlign:"center",
         fontSize: 15
+    },
+    texto3:{
+        alignSelf:"center",
+        marginTop: 6,
+        fontSize: 18
+    },
+    voltar:{
+        marginTop: 20,
+        width: "40%",
+        marginTop: 15,
+        backgroundColor: "transparent",
+        height: 40,
+        borderWidth: 2,
+        borderColor: "#5C0505",
+        borderRadius: 10,
+        marginBottom: 20
     }
     
 })
