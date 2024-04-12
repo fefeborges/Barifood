@@ -12,7 +12,6 @@ const css = StyleSheet.create({
         width: "100%",
         height: 81,
         backgroundColor:  "#5C0505",
-        marginBottom: 40
     },
     imagem: {
         width: 81,

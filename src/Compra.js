@@ -1,11 +1,12 @@
-import { Text, View, StyleSheet, Image, FlatList, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, Image, FlatList, TouchableOpacity, ScrollView } from "react-native";
 import { useState } from "react";
 import CompraLista from "./CompraLista";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { TextInput } from "react-native";
 import Header from "./components/Header";
-// import Dropdown from 'react-native-input-select';
+import Dropdown from 'react-native-input-select';
 import React from 'react';
+import { Platform } from 'react-native';
 
 const compra = [
     {
@@ -22,38 +23,52 @@ const compra = [
     },
 ]
 
-export default function Compra() {
+export default function Compra({setExibe, setCompra, navigation }) {
 
-    // const [pagamento, setPagamento] = React.useState();
-
-    // return (
-    //   <Dropdown
-    //     label="pagamento"
-    //     placeholder="Forma de Pagamento"
-    //     options={[
-    //       { label: 'Dinheiro', value: 'D' },
-    //       { label: 'Cartão de Débito', value: 'CD' },
-    //       { label: 'Cartão de Crédito', value: 'CC' },
-    //       { label: 'Pix', value: 'P' },
-    //     ]}
-    //     selectedValue={pagamento}
-    //     onValueChange={(value) => setPagamento(value)}
-    //     primaryColor={'green'}
-    //   />
-    // );
     
+    const [pagamento, setPagamento] = React.useState();
 
+    function Select()
+    {
+        // const Select = {
+        //     height: 10,
+        //     backgroundColor: '#f0f0f0',
+        //     padding: 10,
+        //     ...(Platform.OS === 'ios' ? { color: 'red' } : { color: 'blue' }),
+        // }; 
+        return (
+            <Dropdown
+              placeholder="Selecione"
+              options={[
+                { label: 'Dinheiro', value: 'D' },
+                { label: 'Cartão de Débito', value: 'CD' },
+                { label: 'Cartão de Crédito', value: 'CC' },
+                { label: 'Pix', value: 'P' },
+              ]}
+              selectedValue={pagamento}
+              onValueChange={(value) => setPagamento(value)}
+              primaryColor={'green'}
+            />
+          );
+    }
     return (
-        <View style={css.container}>
+        <ScrollView contentContainerStyle={css.container}>
             <Header />
+            <TouchableOpacity onPress={() => navigation.navigate("Pedidos")} style={css.botao} setExibe={setExibe}>
+                <Text style={css.texto2}>Finalizar Pedido</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={css.voltar} onPress={ () => { setExibe( false ); setCompra( false ); } }>
+                <Text style={css.texto}>Voltar</Text>
+            </TouchableOpacity>
             <Text style={css.titulo}>COMPRA</Text>
             <View style={css.box}>
                 <Image style={css.imagem} source={require("../assets/d'vitto.png")} />
                 <Text style={css.restaurante}>Armazém D'Vitto</Text>
-                <FlatList
-                    data={compra} renderItem={({ item }) => <CompraLista nome={item.nome} preco={item.preco} />}
-                    keyExtractor={(item) => item.id} 
-                />
+                {
+                    compra.map( ( item ) => (
+                        <CompraLista id={item.id} nome={item.nome} preco={item.preco} />
+                    ))
+                }
                 <View style={css.boxCupom}>
                     <Text style={css.texto}>Cupom</Text>
                     <TextInput style={css.inputcupom} placeholder="Insira um cupom" />
@@ -62,6 +77,7 @@ export default function Compra() {
                     <Text style={css.texto1}>Total:</Text>
                     <Text style={css.texto1}>R$116.00</Text>
                 </View> 
+                
                 <View style={css.boxDebaixo}>
                     <View style={css.boxlabel} >
                         <Text style={css.label}>Endereço:</Text>
@@ -70,19 +86,17 @@ export default function Compra() {
                     <View style={css.boxlabel}>
                         <Text style={css.label}>Forma de Pagamento:</Text>
                     </View>
-                    <TouchableOpacity onPress={() => navigation.navigate("Pedidos")} style={css.compra}>
-                        <Text style={css.texto}>Finalizar Pedido</Text>
-                    </TouchableOpacity>
+                    <Select style={css.select}/>
                 </View>
             </View>
-        </View>
+        </ScrollView>
     )
 }
 const css = StyleSheet.create({
     container: {
-        flex: 1,
+        flexGrow: 1,
         backgroundColor: "#FFEFD9",
-        alignItems: "center"
+        alignItems: "center",
     },
     titulo: {
         fontSize: 20,
@@ -145,7 +159,9 @@ const css = StyleSheet.create({
     },
     texto: {
         fontSize: 17,
-        marginTop: 10
+        marginTop: 10,
+        alignSelf: "center",
+        marginTop: 6
     },
     texto1: {
         fontSize: 17,
@@ -182,6 +198,16 @@ const css = StyleSheet.create({
         height: 50,
         borderWidth: 1,
         borderRadius: 10,
+    },
+    voltar: {
+        marginTop: 20,
+        width: "40%",
+        marginTop: 25,
+        backgroundColor: "transparent",
+        height: 40,
+        borderWidth: 2,
+        borderColor: "#5C0505",
+        borderRadius: 10,
         marginBottom: 20
     },
     texto2: {
@@ -189,6 +215,14 @@ const css = StyleSheet.create({
         fontSize: 18,
         textAlign: "center",
         marginTop: 10,
-        
+    },
+    select: {
+        width: "90%",
+        height: 30,
+        borderWidth: 1.5,
+        borderColor: "#5C0505",
+        borderRadius: 7,
+        padding: 10,
+        marginTop: 10
     }
 })

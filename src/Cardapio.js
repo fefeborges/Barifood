@@ -1,6 +1,9 @@
-import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity, Button} from "react-native";
+import { View, Text, StyleSheet, Image, FlatList, TouchableOpacity} from "react-native";
 import CardapioLista from "./CardapioLista";
+import Compra from "./Compra";
 import Header from "./components/Header";
+import { useState } from "react";
+import Home from "./Home";
 
 const pratos = [
     {
@@ -49,8 +52,9 @@ const pratos = [
 
 ]
 
-export default function Cardapio ({navigation})
-{
+export default function Cardapio({setExibe, setCompra}) {
+
+// 
     return(
         <View style={css.container}>
             <Header />
@@ -71,11 +75,14 @@ export default function Cardapio ({navigation})
             </View>
             <View style={css.box}>
                 <FlatList
-                    data={pratos} renderItem={({ item }) => <CardapioLista imagem={item.imagem} nome={item.nome} descricao={item.descricao} preco={item.preco} />}
+                    data={pratos} renderItem={({ item }) => <CardapioLista imagem={item.imagem} nome={item.nome} descricao={item.descricao} preco={item.preco} setCompra={setCompra} />}
                     keyExtractor={(item) => item.id} />
             </View>
-            <TouchableOpacity onPress={() => navigation.navigate("Compra")} style={css.compra}>
+            <TouchableOpacity onPress={() => { setCompra( true ); setExibe( false ); } } style={css.compra}>
                 <Text style={css.texto}>Continuar Compra</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => { setCompra( false ); setExibe( false ); } } style={css.compra}>
+                <Text style={css.texto}>Voltar</Text>
             </TouchableOpacity>
         </View>
     )
@@ -95,7 +102,7 @@ const css = StyleSheet.create({
     box: {
         backgroundColor: "white",
         width: "90%",
-        height: "65%",
+        height: "60%",
         justifyContent: "center",
         borderRadius: 10,
         borderWidth: 1,

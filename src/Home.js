@@ -2,6 +2,9 @@ import { Text, View, FlatList, StyleSheet, Image } from "react-native";
 import { useState } from "react";
 import RestaurantesLista from "./RestaurantesLista";
 import Header from "./components/Header";
+import Cardapio from "./Cardapio";
+import Compra from "./Compra";
+import Pedidos from "./Pedidos";
 
 const restaurantes = [
     {
@@ -65,12 +68,30 @@ const restaurantes = [
 ]
 
 export default function Home({navigation}) {
+
+    const [ exibe, setExibe ] = useState(false);
+    const [ compra, setCompra ] = useState(false);
+    const [ pedido, setPedido ] = useState(false);
+
+
+    if( exibe ) {
+        return( <Cardapio setExibe={setExibe} setCompra={setCompra} />)
+    }
+
+    if( compra ) {
+        return( <Compra setExibe={setExibe} setCompra={setCompra} navigation={navigation} /> )
+    }
+
+    if( pedido ) {
+        return( <Pedidos setExibe={setExibe} setCompra={setCompra} setPedido={setPedido} />)
+    }
+
     return (
         <View style={css.container}>
             <Header />
             <Text style={css.titulo}>RESTAURANTES</Text>
             <FlatList
-                data={restaurantes} renderItem={({ item }) => <RestaurantesLista imagem={item.imagem} nome={item.nome} descricao={item.descricao} avaliacao={item.avaliacao} />}
+                data={restaurantes} renderItem={({ item }) => <RestaurantesLista imagem={item.imagem} nome={item.nome} descricao={item.descricao} avaliacao={item.avaliacao} setExibe={setExibe} />}
                 keyExtractor={(item) => item.id}
                 columnWrapperStyle={{
                     justifyContent: "space-between",
