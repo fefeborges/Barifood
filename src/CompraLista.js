@@ -1,8 +1,8 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 
-export default function CompraLista({nome, preco}) {
+export default function CompraLista({ id, nome, preco}) {
     return(
-        <View style={css.container}>     
+        <View style={css.container} key={id}>     
             <Text style={css.nome}>{nome}</Text>
             <Text style={css.preco}>{preco}</Text>
         </View>

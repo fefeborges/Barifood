@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useState } from 'react';
-import React from 'react';
 
 
 import Home from './src/Home';
@@ -20,7 +19,7 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
 
-  const [logado, setLogado] = useState(false);
+  const [logado, setLogado] = useState(true);
   const [cadastro, setCadastro] = useState(false);
 
   if (logado == false) {
@@ -52,15 +51,6 @@ export default function App() {
           }}
         />
         <Tab.Screen
-        name="Cardapio"
-        component={Cardapio}
-        options={{
-          tabBarLabel: '',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name='silverware-variant' color={color} size={40} />),
-        }}
-      />
-        <Tab.Screen
           name="Pedidos"
           component={Pedidos}
           options={{
@@ -75,7 +65,7 @@ export default function App() {
           options={{
             tabBarLabel: '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name='wallet-plus' color={color} size={35} />),
+              <MaterialCommunityIcons name='home' color={color} size={40} />),
           }}
         />
         <Tab.Screen
